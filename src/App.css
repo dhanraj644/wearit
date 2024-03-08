@@ -25,3 +25,10 @@ body.html{
   height: 2px;
   background-color: crimson;
 }
+@media screen and (max-width:380px) {
+  .main1{
+
+    gap: 10px;
+ 
+  }
+}
