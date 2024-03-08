@@ -1,0 +1,10 @@
+.shop_c{
+    width: 100%;
+    height: auto;
+}
+@media screen and (max-width:500px) {
+
+    .shop_c>img{
+        height: 180px !important;
+    }
+}

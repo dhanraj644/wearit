@@ -1,0 +1,118 @@
+nav{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(22, 24, 24);
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    padding: 20px;
+}
+.logo>h2{
+ color: #fff;
+ font-size: 30px; 
+ font-weight: bold;
+ cursor: pointer;
+
+}
+.list{
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+}
+.list>a{
+    list-style: none;
+    text-decoration: none;
+}
+.list>a>li{
+    color: #fff;
+    font-size: 20px;
+}
+.list>a>li:hover{
+    color: crimson;
+}
+.icon{
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+.icon>i{
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+
+}
+.icon>a{
+    text-decoration: none;
+}
+.icon>a>i{
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+
+}
+.icon>i:hover{
+    color: crimson;
+}
+#bar{
+    display: none;
+}
+@media screen and (max-width: 700px) {
+ .list{
+    display: none;
+
+ }   
+ #bar{
+    display: block;
+ }
+ #loging{
+    display: none;
+}
+}
+
+.barclick{
+    margin-top: 80px;
+    width: 70%;
+    height: 800px;
+    background-color: #161818;
+    position:absolute;
+    z-index: 5;
+}
+.cross-icon{
+    display: flex;
+    justify-content: end;
+    color: #fff;
+
+}
+.cross-icon>i{
+    font-size: 50px;
+}
+.ll_list{
+    width: 100%;
+    padding-top: 50px;
+    gap: 10px;
+    text-align: center;
+
+}
+.ll_list>a{
+    text-decoration: none;
+    width: 100%;
+
+}
+.ll_list>a>li{
+    list-style: none;
+    font-size: 25px;
+    color: #fff;
+
+}
+#Toggel{
+    display: none;
+}
+.login-sin{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.hr-line{
+    color:crimson;
+}
