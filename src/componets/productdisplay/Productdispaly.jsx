@@ -1,17 +1,22 @@
-import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import all_product from "../Assets/all_product";
 import "./productdisplay.css";
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { Imagegallry } from "./Imagegallry";
+
+
 
 
 export const Productdispaly = ({ props }) => {
   const { id } = useParams();
-
+  
   const product = all_product.find((e) => e.id === Number(id));
+  const img=product.image;
   Fancybox.bind("[data-fancybox]", {
     // Your custom options
+
+    
   });
   
   return (
@@ -19,19 +24,8 @@ export const Productdispaly = ({ props }) => {
         <section>
         <div className="main-section">
           <div className="left-section">
-            <a href={product.image} data-fancybox="gallery">
-              <img src={product.image} alt="" />
-            </a>
-            <a href={product.image}  data-fancybox="gallery">
-              <img src={product.image} alt="" />
-            </a>
-            <a href={product.image} data-fancybox="gallery">
-              <img src={product.image} alt="" />
-            </a>
-            <a href={product.image} data-fancybox="gallery">
-              <img src={product.image} alt="" />
-            </a>
-          </div>
+          <Imagegallry img={img}/>
+                     </div>
           <div className="right-section">
             <h2>H&M</h2>
             <h4>{product.name}</h4>

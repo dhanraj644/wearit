@@ -41,7 +41,7 @@ export const Cardtwo = () => {
         mouseTracking
         items={items}
         responsive={responsive}
-        controlsStrategy="alternate"
+        // controlsStrategy="alternate"
     />
       </section>
     </>
