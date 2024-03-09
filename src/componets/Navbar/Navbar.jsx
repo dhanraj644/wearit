@@ -18,7 +18,8 @@ export const Navbar = () => {
   return (
  <nav className='sticky-top'>
   <div className="logo">
-    <h2>WEAR <span style={{color:'crimson'}}>IT</span></h2>
+
+    <Link to="/"><h2>WEAR <span style={{color:'crimson'}}>IT</span></h2></Link>
   </div>
   
   <div className="list" >

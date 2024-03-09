@@ -1,17 +1,18 @@
 import React from 'react'
 import './footer.css'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
     <div className="footer" style={{marginTop:"30px"}}>
         <div className="footerlogo">
-            <h1>WEARIT</h1>
+           <Link to="/"><h1>WEAR <span style={{color:'crimson'}}>IT</span></h1></Link> 
         </div>
         <ul className='footer-links'>
-            <li>Home</li>
-            <li>Products</li>
-            <li>Contact us</li>
-            <li>Service</li>
+            <Link to="/"><li>Home</li></Link>
+            <Link to="/man"><li>Man</li></Link>
+            <Link to="/woman"><li>Woman</li></Link>
+            <Link to="/kid"><li>Kids</li></Link>
         </ul>
         
         <div className="social-icon">

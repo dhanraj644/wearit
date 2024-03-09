@@ -12,7 +12,10 @@
     align-items: center;
     gap: 20px;
 }
-.footerlogo>h1{
+.footerlogo>a{
+    text-decoration: none;
+}
+.footerlogo>a>h1{
     color: #fff;
     font-size: 46px;
     font-weight: 600;
@@ -27,10 +30,14 @@
         color:#fff;
         font-size: 20px;
 }
-.footer-links>li{
-    cursor: pointer;
+.footer-links>a{
+    text-decoration: none;
 }
-.footer-links>li:hover{
+.footer-links>a>li{
+    cursor: pointer;
+    color: #fff;
+}
+.footer-links>a>li:hover{
     color: crimson;
 }
 .social-icon{
@@ -61,7 +68,7 @@
 }
 @media screen and (max-width:500px) {
     .footer-links{
-        gap: 10px;
+        gap: 20px;
         margin-left: -20px;
     }
     
