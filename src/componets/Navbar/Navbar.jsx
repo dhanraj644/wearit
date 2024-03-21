@@ -1,6 +1,7 @@
 import React from 'react'
 import './nav.css'
 import { Link } from 'react-router-dom'
+import { Buttons } from '../button/Buttons'
 
 // import {Link} from 'react-router-dom'
 
@@ -34,7 +35,7 @@ export const Navbar = () => {
   <div className="icon">
   <i className="ri-search-line"></i>
   <Link to="cart"> <i className="ri-shopping-cart-line"></i></Link>
-   <button id='loging' className='btn ' style={{backgroundColor:'crimson',color:'#fff'}}> LOGIN</button>
+   <Buttons  name="Login" backgroundcolor="crimson" color="#fff" />
   <i className="ri-bar-chart-horizontal-fill" id='bar'onClick={show}></i>
   </div>
 
@@ -42,10 +43,10 @@ export const Navbar = () => {
   <div className="cross-icon" onClick={hide}>
   <i className="ri-close-line"></i>
   </div>
-  <hr  className='hr-line' />
+  <hr  className='hr-line'/>
   <div className="login-sin">
-  <button className='btn ' style={{backgroundColor:'crimson',color:'#fff'}}> LOGIN</button>
-  <button className='btn ' style={{backgroundColor:'white',color:'black'}}> SIGNUP</button>
+    <Buttons  name="LOGIN" backgroundcolor="crimson" color="#fff"/>
+    <Buttons  name="SIGNUP" backgroundcolor="white" color="black"/>
   <hr  className='hr-line' />
 
   </div>

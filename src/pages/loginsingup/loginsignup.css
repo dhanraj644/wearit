@@ -1,0 +1,77 @@
+
+.contener{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+}
+.contener h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+.contener form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+form  .text_field{
+    position: relative;
+    margin: 30px 0;
+}
+.text_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 16px;
+ 
+} 
+.text_field label{
+    position: absolute;
+    top: 50%;
+    left:5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+.pass{
+    text-align: center;
+    padding-bottom: 10px;
+   color: #2691d9;
+}
+.pass a{
+    text-decoration: none;
+}
+input[type="submit"]{
+     width: 100%;
+     height: 50px;
+     border: 1px solid;
+     background: #2691d9;
+     border-radius: 25px;
+     font-size: 18px;
+     color: #e9f4fb;
+     font-weight: 700;
+     cursor: pointer;
+     outline: none;
+}
+input[type="submit"]:hover{
+     border-color: #2691d9;
+     transition: .5s;
+}
+.signup_link{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+.signup_link a {
+    color:#2691d9 ;
+    text-decoration: none;
+}
+.signup_link a:hover{
+    text-decoration: underline;
+
+}
