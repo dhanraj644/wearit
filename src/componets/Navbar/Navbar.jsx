@@ -35,7 +35,9 @@ export const Navbar = () => {
   <div className="icon">
   <i className="ri-search-line"></i>
   <Link to="cart"> <i className="ri-shopping-cart-line"></i></Link>
-   <Buttons  name="Login" backgroundcolor="crimson" color="#fff" />
+   <div id="loging">
+   <Buttons  name="Login" backgroundcolor="crimson" color="#fff"  />
+   </div>
   <i className="ri-bar-chart-horizontal-fill" id='bar'onClick={show}></i>
   </div>
 
