@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'remixicon/fonts/remixicon.css'
 import './App.css';
 import { Navbar } from './componets/Navbar/Navbar';
-import { BrowserRouter as Router,Routes,Route,Link } from 'react-router-dom'
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import { Home } from './pages/home/Home';
 import {Cart }from './pages/cart/Cart'
 import {Footer} from'./componets/footer/Footer'
@@ -12,8 +12,9 @@ import men_banner from'./componets/Assets/banner_mens.png'
 import woman_banner from'./componets/Assets/banner_women.png'
 import kid_banner from'./componets/Assets/banner_kids.png';
 import { Shopcategary } from './componets/shopcategary/Shopcategary';
-
 import { Productdispaly } from './componets/productdisplay/Productdispaly';
+import { Login} from './pages/loginsingup/Login';
+import {Signup} from './pages/loginsingup/Signup';
 
 function App() {
   return (
@@ -29,7 +30,9 @@ function App() {
       <Route path='/kid' element={<Shopcategary category="kid"  banner={kid_banner} />}/>
       <Route path='/display/:id' element={<Productdispaly/>}/>
       <Route path='/cart' element={<Cart/>}/>
-      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/signup' element={<Signup/>}/>
+
 
     </Routes>
     <Footer/>

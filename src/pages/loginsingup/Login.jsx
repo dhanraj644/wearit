@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './loginsignup.css'
 
 export const Login = () => {
   return (
     <>
+    <section id='m_login'>
     <div class="contener">
         <h1>Login</h1>
         <form method="post">
@@ -16,10 +18,11 @@ export const Login = () => {
             <div class="pass"><a href="#">Forget password ?</a></div>
             <input type="submit" value="Login"/>
             <div class="signup_link">
-           Dont't have an account? <a href="./index.html">signup</a>
+           Dont't have an account? <Link to="/signup">Signup</Link>
         </div>
         </form>
     </div>
+    </section>
     </>
   )
 }

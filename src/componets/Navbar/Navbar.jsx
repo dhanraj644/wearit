@@ -11,10 +11,13 @@ export const Navbar = () => {
   const show=()=>{
    var a=document.getElementById('Toggel')
    a.style.display='block';
+  //  a.animate([{opacity:'0.0'}, {opacity:'1.0'}],
+  //  {duration: 250, fill:'forwards'})
   }
   const hide=()=>{
     var a=document.getElementById('Toggel')
    a.style.display='none';
+  
   }
   return (
  <nav className='sticky-top'>
@@ -36,7 +39,8 @@ export const Navbar = () => {
   <i className="ri-search-line"></i>
   <Link to="cart"> <i className="ri-shopping-cart-line"></i></Link>
    <div id="loging">
-   <Buttons  name="Login" backgroundcolor="crimson" color="#fff"  />
+   
+   <Link to="login"><Buttons  name="Login" backgroundcolor="crimson" color="#fff"  /></Link>
    </div>
   <i className="ri-bar-chart-horizontal-fill" id='bar'onClick={show}></i>
   </div>
@@ -46,9 +50,11 @@ export const Navbar = () => {
   <i className="ri-close-line"></i>
   </div>
   <hr  className='hr-line'/>
-  <div className="login-sin">
-    <Buttons  name="LOGIN" backgroundcolor="crimson" color="#fff"/>
-    <Buttons  name="SIGNUP" backgroundcolor="white" color="black"/>
+  <div className="login-sin"  onClick={hide}>
+  <Link to="login"><Buttons  name="Login" backgroundcolor="crimson" color="#fff"   /></Link>
+  <Link to="/signup"><Buttons  name="SIGNUP" backgroundcolor="white" color="black"/></Link>
+
+    
   <hr  className='hr-line' />
 
   </div>

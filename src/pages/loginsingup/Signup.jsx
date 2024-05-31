@@ -4,6 +4,7 @@ import './loginsignup.css'
 export const Signup = () => {
   return (
    <>
+    <section id='m_login'>
     <div class="contener">
         <h1>Signup</h1>
         <form method="post">
@@ -23,6 +24,7 @@ export const Signup = () => {
         </div>
         </form>
     </div>
+    </section>
    </>
   )
 }
