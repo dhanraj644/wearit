@@ -1,58 +1,75 @@
 import { useParams } from "react-router-dom";
 import all_product from "../Assets/all_product";
 import "./productdisplay.css";
-import { Fancybox } from "@fancyapps/ui";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
-import { Imagegallry } from "./Imagegallry";
-
-
+import star_icon from "../Assets/star_icon.png"
+import star_dull_icon from "../Assets/star_dull_icon.png"
+import { Breadscrum } from "../breadscrum/Breadscrum";
+import Relatedproduct from '../relatedproduct/Relatedproduct'
 
 
 export const Productdispaly = ({ props }) => {
   const { id } = useParams();
   
   const product = all_product.find((e) => e.id === Number(id));
-  const img=product.image;
-  Fancybox.bind("[data-fancybox]", {
-    // Your custom options
-
-    
-  });
   
   return (
     <>
-        <section>
-        <div className="main-section">
-          <div className="left-section">
-          <Imagegallry img={img}/>
-                     </div>
-          <div className="right-section">
-            <h2>H&M</h2>
-            <h4>{product.name}</h4>
-            <hr />
+    <div>
+      <Breadscrum product={product}/>
+      
+        <div className="productdisplay">
+          <div className="productdisplay-left">
+          <div className="productdisplay-img-list">
+            <img src={product.image} alt="" />
+            <img src={product.image} alt="" />
+            <img src={product.image} alt="" />
+            <img src={product.image} alt="" />
+          </div>
+          <div className="productsisplay-img">
+          <img className="productdisplay-main-img" src={product.image} alt="" />
 
-            <div className="price-section">
-              <h4>MRP :</h4>
-              <h3>₹{product.new_price}</h3>
+          </div>
+          </div>
+          <div className="productdisplay-right">
+            <h1>{product.name}</h1>
+            <div className="productdisplay-right-stars">
+                <img src={star_icon} alt="" />
+                <img src={star_icon} alt="" />
+                <img src={star_icon} alt="" />
+                <img src={star_icon} alt="" />
+                <img src={star_dull_icon} alt="" />
+                <p>(122)</p>
+
             </div>
-
-            <div className="size-section">
-              <h6>SELECT SIZE :</h6>
-              <div className="size-list">
-                <div className="size">S</div>
-                <div className="size">M</div>
-                <div className="size">L</div>
-                <div className="size">XL</div>
+            <div className="productdisplay-right-prices">
+              <div className="productdispaly-right-price-old">${product.old_price}</div>
+              <div className="productdisplay-right-price-new">${product.new_price}</div>
+            </div>
+            <div className="productdispaly-right-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              ia doloribus ullam illo? Placeat debitis iste mollitia laborum!
+            </div>
+            <div className="productdisplay-right-size">
+              <h1>Select Size</h1>
+              <div className="productdisplay-right-sizes">
+                <div>S</div>
+                <div>M</div>
+                <div>L</div>
+                <div>XL</div>
+                <div>XXL</div>
               </div>
             </div>
 
-            <div className="buttons">
-              <button className="btn btn-buy">BUY NOW</button>
-              <button className="btn btn-cart">ADD TO CART</button>
-            </div>
+            <button>Add To Cart</button>
+            <p className="productdisplay-right-category"><span>Catecory :</span>Women , T-Shirt, Crop Top</p>
+            <p className="productdisplay-right-category"><span>Tags :</span>Modern , Latest, Crop Top</p>
+
           </div>
+         
         </div>
-      </section>
+
+        <Relatedproduct/>
+        </div>
     </>
   );
 };
