@@ -2,18 +2,23 @@
     width: 280px;
     height: auto;
     margin-top: 10px;
-    border-radius: 10px 10px 10px 10px;
+   
 }
 .card:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px 10px 10px 10px;
 }
 
 .card>img{
-    border-radius: 10px 10px 0px 0px;
+    
     width: auto;
     height: auto;
     object-fit: cover;
     object-position: left;
+}
+.card>img:hover{
+    border-radius: 10px 10px 0px 0px;
+
 }
 .details{
     text-align: center;

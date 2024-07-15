@@ -42,8 +42,8 @@ export const Productdispaly = ({ props }) => {
 
             </div>
             <div className="productdisplay-right-prices">
-              <div className="productdispaly-right-price-old">${product.old_price}</div>
-              <div className="productdisplay-right-price-new">${product.new_price}</div>
+              <div className="productdispaly-right-price-old">RS.{product.old_price}</div>
+              <div className="productdisplay-right-price-new">RS.{product.new_price}</div>
             </div>
             <div className="productdispaly-right-description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -68,6 +68,7 @@ export const Productdispaly = ({ props }) => {
          
         </div>
 
+     <hr />
         <Relatedproduct/>
         </div>
     </>

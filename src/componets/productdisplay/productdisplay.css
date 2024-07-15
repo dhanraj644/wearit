@@ -1,6 +1,7 @@
 .productdisplay{
     display: flex;
     margin: 0px 20px;
+    
 }
 .productdisplay-left{
     display: flex;
@@ -44,10 +45,11 @@
     font-size: 24px;
     font-weight: 700;
 }
-.productdisplay-right-price-old{
+.productdispaly-right-price-old{
     color: #818181;
-    text-decoration: line-through;
+    text-decoration: line-through ;
 }
+.productdispaly-right-price-old{}
 .productdisplay-right-price-new{
     color: crimson;
 }
