@@ -1,6 +1,6 @@
 import React from 'react'
 import './loginsignup.css'
-
+import { Link } from 'react-router-dom'
 export const Signup = () => {
   return (
    <>
@@ -20,8 +20,8 @@ export const Signup = () => {
             {/* <div class="pass"><a href="#">Forget password ?</a></div> */}
             <input type="submit" value="signup"/>
             <div class="signup_link">
-           Already have a account? <a href="./index1.html">Login</a>
-        </div>
+           Already have a account?  <Link to="/Login">Login</Link> 
+                 </div>
         </form>
     </div>
     </section>
