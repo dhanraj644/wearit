@@ -1,0 +1,7 @@
+.cartitems{
+    display: flex;
+}
+.cartitems-format-main{
+    display: flex;
+    gap: 60px;
+}

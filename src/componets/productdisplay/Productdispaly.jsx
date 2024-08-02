@@ -1,14 +1,16 @@
 import { useParams } from "react-router-dom";
-import all_product from "../Assets/all_product";
 import "./productdisplay.css";
 import star_icon from "../Assets/star_icon.png"
 import star_dull_icon from "../Assets/star_dull_icon.png"
 import { Breadscrum } from "../breadscrum/Breadscrum";
 import Relatedproduct from '../relatedproduct/Relatedproduct'
+import { useContext } from "react";
+import { ShopContext } from '../context/ShopContextProvider'
 
 
 export const Productdispaly = ({ props }) => {
   const { id } = useParams();
+  const {all_product} =useContext(ShopContext)
   
   const product = all_product.find((e) => e.id === Number(id));
   
