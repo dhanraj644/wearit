@@ -1,7 +1,18 @@
 .cartitems{
     display: flex;
 }
+.cartitems hr{
+    height: 3px;
+    background: #e2e2e2;
+    border: 0;
+}
 .cartitems-format-main{
     display: flex;
-    gap: 60px;
+    align-items: center;
+    justify-content: ;
+    gap: 75px;
+    padding: 20px 0px;
+    color: #454545;
+    font-size: 18px;
+    font-weight: 600;
 }

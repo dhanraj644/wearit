@@ -22,7 +22,7 @@ const Cartitems = () => {
         {
            
           return <div>
-            <div className="cartitems-format">
+            <div className="cartitems-format cartitems-format-main">
                 <img src={e.image} alt="" className='carticon-product-icon' />
                 <p>{e.name}</p>
                 <p>RS:{e.new_price}</p>
@@ -32,6 +32,7 @@ const Cartitems = () => {
             </div>
             <hr />
         </div>
+        
        }
        })} 
     </div>
