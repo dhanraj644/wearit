@@ -11,6 +11,7 @@ import { ShopContext } from '../context/ShopContextProvider'
 export const Productdispaly = ({ props }) => {
   const { id } = useParams();
   const {all_product} =useContext(ShopContext)
+  const {addToCart}= useContext(ShopContext)
   
   const product = all_product.find((e) => e.id === Number(id));
   
@@ -62,7 +63,7 @@ export const Productdispaly = ({ props }) => {
               </div>
             </div>
 
-            <button>Add To Cart</button>
+            <button onClick={()=>{addToCart(product.id)}}>Add To Cart</button>
             <p className="productdisplay-right-category"><span>Catecory :</span>Women , T-Shirt, Crop Top</p>
             <p className="productdisplay-right-category"><span>Tags :</span>Modern , Latest, Crop Top</p>
 
