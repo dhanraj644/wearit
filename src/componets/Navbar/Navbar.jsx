@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './nav.css'
 import { Link } from 'react-router-dom'
 import { Buttons } from '../button/Buttons'
+import { ShopContext } from '../context/ShopContextProvider'
 
 
 // import {Link} from 'react-router-dom'
 
 
 export const Navbar = () => {
+ 
 
+  const {getTotalCartItem}=useContext(ShopContext)
   const show=()=>{
    var a=document.getElementById('Toggel')
    a.style.display='block';
@@ -39,11 +42,13 @@ export const Navbar = () => {
   <div className="icon">
   <i className="ri-search-line"></i>
   <Link to="cart"> <i className="ri-shopping-cart-line"></i></Link>
+  <div className="cart-value">{getTotalCartItem()}</div>
    <div id="loging">
    
    <Link to="login"><Buttons  name="Login" backgroundcolor="crimson" color="#fff"  /></Link>
    </div>
   <i className="ri-bar-chart-horizontal-fill" id='bar'onClick={show}></i>
+   
   </div>
 
   <div className="barclick" id='Toggel'>

@@ -14,7 +14,7 @@ export const Productdispaly = ({ props }) => {
   const {addToCart}= useContext(ShopContext)
   
   const product = all_product.find((e) => e.id === Number(id));
-  
+    
   return (
     <>
     <div>

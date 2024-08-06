@@ -60,6 +60,11 @@ text-decoration: none;
 #bar{
     display: none;
 }
+.cart-value{
+    position: absolute;
+    color: red;
+    margin-left: 68px;
+}
 @media screen and (max-width: 700px) {
  .list{
     display: none;
