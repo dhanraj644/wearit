@@ -64,11 +64,13 @@ text-decoration: none;
 .cart-value{
     position: absolute;
     color: white;
-    width: 5px;
-    height: 5px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background-color: crimson;
-    margin-left: 68px;
+    margin-left: 61px;
+    text-align: center;
+    line-height: 16px;
 }
 @media screen and (max-width: 700px) {
  .list{
