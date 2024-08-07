@@ -45,6 +45,7 @@ text-decoration: none;
     cursor: pointer;
 
 }
+
 .icon>a{
     text-decoration: none;
 }
@@ -62,7 +63,11 @@ text-decoration: none;
 }
 .cart-value{
     position: absolute;
-    color: red;
+    color: white;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: crimson;
     margin-left: 68px;
 }
 @media screen and (max-width: 700px) {
