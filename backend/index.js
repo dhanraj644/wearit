@@ -122,13 +122,27 @@ console.log("database is not connected"+ errr)
 
     
 // remove product from database
-    
+       
+    app.post("/removeproduct",async (req,res)=>{
+        await Product.findOneAndDelete({id:req.body.id})
+        console.log("removed")
+        res.json({
+            success:true,
+            name:req.body.name
+        })
+    })
+// fetch all product
 
+    app.get("/allproduct",async(req,res)=>{
+        let products = await Product.find({});
+        console.log("All product fetch");
+        res.send(products)
+    })
 // Api creation
     app.get("/",(req,res)=>{
         res.send("Express is running")
     })
-app.listen(port,(error)=>{
+    app.listen(port,(error)=>{
     if(!error)
     {
     console.log(`port is running in  ${port}`)
