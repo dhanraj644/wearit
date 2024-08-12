@@ -12,12 +12,13 @@ app.use(express.json());
 app.use(cors())
 
 // mongoose database connection
-    mongoose.connect("mongodb://localhost:27017/E-comerce")
-    .then(() => {
-        console.log('MongoDB connected');
-        // Perform the database operation here
-      })
-      .catch(err => console.log('MongoDB connection error:', err));
+mongoose.connect('mongodb://127.0.0.1:27017/e-commerce')
+.then(()=>{
+console.log("database is connected")
+})
+.catch(errr=>{
+console.log("database is not connected"+ errr)
+});
 
 // image stotage usin multer
 
@@ -76,23 +77,52 @@ app.use(cors())
 
 
     })    
-    app.post("/addproduct",async (req,res)=>{
-        const product=new Product({
-            id:req.body.id,
-            name:req.body.name,
-            image:req.body.image,
-            catogary:req.body.category,
-            new_price:req.body.new_price,
-            old_price:req.body.old_price,
+    app.post("/addproduct", async (req, res) => {
+        try {
+            // Fetch the last product by sorting by id in descending order and limit to 1
+            const lastProduct = await Product.findOne().sort({ id: -1 }).exec();
+            let id = 1; // Default id if no products are found
+    
+            if (lastProduct && typeof lastProduct.id === 'number') {
+                id = lastProduct.id + 1;
+            }
+    
+            // Validate the ID before creating the product
+            if (isNaN(id) || id <= 0) {
+                throw new Error("Invalid ID generated");
+            }
+    
+            // Create a new product instance
+            const product = new Product({
+                id: id,
+                name: req.body.name,
+                image: req.body.image,
+                category: req.body.category,  // Typo fixed from 'categary' to 'category'
+                new_price: req.body.new_price,
+                old_price: req.body.old_price,
+            });
+    
+            // Save the product to the database
+            await product.save();
+            console.log("Product saved");
+    
+            // Send a response to the client
+            res.json({
+                success: true,
+                name: req.body.name,
+            });
+        } catch (error) {
+            console.error("Error saving product:", error.message);
+            res.status(500).json({
+                success: false,
+                message: "An error occurred while saving the product",
+            });
+        }
+    });
 
-        })
-        await product.save()
-        console.log("saved");
-        res.json({
-            success:true,
-            name:req.body.name,
-        })
-    })
+    
+// remove product from database
+    
 
 // Api creation
     app.get("/",(req,res)=>{
