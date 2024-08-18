@@ -22,6 +22,35 @@ const Addproduct = () => {
 
     const Add_product = async ()=>{
         console.log(productdetails)
+        let responseData;
+        let product=productdetails;
+
+        let formData = new FormData();
+           formData.append('product',image);
+
+         await fetch('http://localhost:4000/upload',{
+            method:'POST',
+            headers:{
+                Accept:'application/json',
+            },
+            body:formData,
+         }).then((res)=>res.json()).then((data)=>{responseData=data});
+         
+         if(responseData.success)
+            {
+                product.image =responseData.image_url;
+                console.log(product);
+                await fetch('http://localhost:4000/addproduct',{
+                    method:'POST',
+                    headers:{
+                        Accept:'application/json',
+                        'Content-Type':'application/json',
+                             },
+                    body:JSON.stringify(product),          
+                }).then((res)=>res.json()).then((data)=>{
+                    data.success?alert("Product Added"):alert("Failed")
+                })
+            }  
 
     }
   return (
@@ -55,7 +84,7 @@ const Addproduct = () => {
             </label>
             <input onChange={imageshandler} type="file" name='image' id='file-input' hidden />
         </div>
-        <button className='addproduct-btn'>ADD</button>
+        <button className='addproduct-btn' onClick={()=>{Add_product()}}>ADD</button>
     </div>
   )
 }
