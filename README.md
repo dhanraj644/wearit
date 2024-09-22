@@ -1,5 +1,12 @@
 # Wearit 
 this is E-commerce website
+#function's
+ - add to cart
+ - add to product
+ - remove product
+ - update product
+ - delete product
+ - login and singup
 
 # TECHNOLOGY
 -REACTJS
