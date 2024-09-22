@@ -15,7 +15,7 @@ import { Shopcategary } from './componets/shopcategary/Shopcategary';
 import { Productdispaly } from './componets/productdisplay/Productdispaly';
 import { Login} from './pages/loginsingup/Login';
 import {Signup} from './pages/loginsingup/Signup';
-
+import {admin} from '../admin'
 function App() {
   return (
    <>
