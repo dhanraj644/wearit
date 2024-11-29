@@ -3,28 +3,24 @@ import './loginsignup.css'
 import { Link } from 'react-router-dom'
 export const Signup = () => {
   return (
-   <>
-    <section id='m_login'>
-    <div class="contener">
-        <h1>Signup</h1>
-        <form method="post">
-            <div class="text_field">
-                <input type="email" required placeholder="Email"/>
+    <div className="singup">
+        <div className="singup-container">
+            <h1>Sing Up</h1>
+
+            <div className="singup-field">
+                <input type="text" placeholder='Your Name' />
+                <input type="text" placeholder='Email Address'/>
+                <input type="text" placeholder='Password'/>
             </div>
-            <div class="text_field">
-                <input type="password"required placeholder="Create Password"/>
+            <button>Continue</button>
+
+            <p className='login-option'>Already have  an account?  <Link to="/login"><span>Login</span></Link></p>
+
+            <div className="agree">
+                <input type="checkbox" name='' id='' />
+                <p>By continuing, i agree to the terms of use & privacy</p>
             </div>
-            <div class="text_field">
-                <input type="password"required placeholder="Cunform Password"/>
-            </div>
-            {/* <div class="pass"><a href="#">Forget password ?</a></div> */}
-            <input type="submit" value="signup"/>
-            <div class="signup_link">
-           Already have a account?  <Link to="/Login">Login</Link> 
-                 </div>
-        </form>
+        </div>
     </div>
-    </section>
-   </>
   )
 }

@@ -77,6 +77,9 @@ console.log("database is not connected"+ errr)
 
 
     })    
+
+        //login
+        
     app.post("/addproduct", async (req, res) => {
         try {
             // Fetch the last product by sorting by id in descending order and limit to 1
