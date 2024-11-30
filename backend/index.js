@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const path = require('path');
 const cors = require('cors');
+const { type } = require('os');
 const app=express();
 const port=4000;
 
@@ -74,12 +75,79 @@ console.log("database is not connected"+ errr)
             type:Boolean,
             default:true,
         },
-
-
     })    
-
-        //login
+        //User model
         
+// Define Mongoose User model
+const User = mongoose.model("User", {
+    id: {
+        type: Number,
+        required: true,
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true, // Ensures no duplicate emails
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+});
+
+// Save user function using the Mongoose model
+const saveUser = async (userDetails) => {
+    try {
+        // Check if the user already exists
+        const existingUser = await User.findOne({ email: userDetails.email });
+        if (existingUser) {
+            return { success: false, message: 'Email already in use.' };
+        }
+
+        // Create a new user
+        const newUser = new User({
+            id: Math.floor(Math.random() * 10000), // Generate a random user ID
+            name: userDetails.username,
+            email: userDetails.email,
+            password: userDetails.password,
+        });
+
+        await newUser.save(); // Save to MongoDB
+        return { success: true, message: 'User successfully signed up!' };
+    } catch (error) {
+        console.error('Error saving user:', error);
+        return { success: false, message: 'Failed to save user details.' };
+    }
+};
+
+// Signup route
+app.post('/signup', async (req, res) => {
+    try {
+        const { username, email, password } = req.body;
+
+        // Validate input fields
+        if (!username || !email || !password) {
+            return res.status(400).json({ error: 'All fields are required.' });
+        }
+
+        // Save user details
+        const result = await saveUser({ username, email, password });
+
+        if (result.success) {
+            res.status(201).json({ message: result.message });
+        } else {
+            res.status(400).json({ error: result.message });
+        }
+    } catch (error) {
+        console.error('Error during signup:', error);
+        res.status(500).json({ error: 'Something went wrong.' });
+    }
+});
+
     app.post("/addproduct", async (req, res) => {
         try {
             // Fetch the last product by sorting by id in descending order and limit to 1
